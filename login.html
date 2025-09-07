@@ -3,42 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Log In</title>
+  <title>FoodHub - Log In</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="app">
-    <section class="login">
-      <header class="header">
-        <div class="logo">AKAYY</div>
-        <h1>Welcome back</h1>
-        <p>Log in to continue</p>
-      </header>
 
-      <form class="form" action="confirmation.html" method="post">
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-        </div>
+<body id="page">
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="••••••••" required />
-        </div>
+  <header class="header">
+    <h1 class="title">Log In</h1>
+  </header>
 
-        <button type="submit" class="btn">Log In</button>
-      </form>
+  <main class="main section">
+    <form class="form">
+      <label for="login-email" class="form-label">Email</label>
+      <input type="email" id="login-email" class="form-input" placeholder="Enter your email" required>
 
-      <div class="divider">or</div>
+      <label for="login-password" class="form-label">Password</label>
+      <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required>
 
-      <div class="social-buttons">
-        <button class="btn-outline">Continue with Google</button>
-        <button class="btn-outline">Continue with Facebook</button>
-      </div>
+      <button type="submit" class="btn btn-primary form-submit">Log In</button>
+    </form>
 
-      <p class="muted">Don’t have an account? <a href="signup.html">Sign up</a></p>
-    </section>
-  </div>
+    <div class="section text-center">
+      <p class="text">Or log in with:</p>
+      <button class="btn btn-google">Google</button>
+      <button class="btn btn-facebook">Facebook</button>
+    </div>
+
+    <p class="text">Don’t have an account? <a href="signup.html" class="nav-link">Sign Up</a></p>
+  </main>
+
+  <footer class="footer text-center">
+    <p class="text">&copy; 2025 FoodHub</p>
+  </footer>
+
 </body>
 </html>
-
