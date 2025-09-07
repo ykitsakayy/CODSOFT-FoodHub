@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - FoodieHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="script" href="script.js.css">
+</head>
+<body id="cart-page">
+
+  <!-- Header -->
+  <header id="main-header" class="header">
+    <h1 class="site-title">FoodieHub</h1>
+    <nav id="nav-bar" class="navbar">
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="cart.html" class="nav-link active">Cart</a></li>
+        <li><a href="login.html" class="nav-link">Login</a></li>
+        <li><a href="signup.html" class="nav-link">Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <main id="cart-section" class="container">
+    <h2 class="section-title">Your Shopping Cart</h2>
+
+    <!-- Empty Cart (default) -->
+    <div id="empty-cart" class="cart-empty">
+      <h3 class="empty-title">Your cart is empty 🛒</h3>
+      <p class="empty-text">Looks like you haven’t added anything yet.</p>
+      <a href="menu.html" class="btn btn-primary">Browse Menu</a>
+    </div>
+
+    <!-- Filled Cart -->
+    <div id="cart-items" class="cart-list" style="display:none;">
+      <!-- Example item (this will be replaced dynamically with JS) -->
+      <div class="cart-item card" id="cart-item-1">
+        <img src="images/pizza.jpg" alt="Pizza" class="cart-item-image">
+        <div class="cart-item-details">
+          <h3 class="cart-item-name">Margherita Pizza</h3>
+          <p class="cart-item-price">Rs. --.--</p>
+          <label for="qty-1" class="cart-label">Quantity:</label>
+          <input type="number" id="qty-1" class="cart-qty" value="1" min="1">
+          <button class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div id="cart-summary" class="cart-summary card" style="display:none;">
+      <p class="cart-total">Total: <span id="cart-total-price">Rs. --.--</span></p>
+      <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="footer">
+    <p class="footer-text">&copy; 2025 FoodieHub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Placeholder JS Hook -->
+  <!-- <script>
+    // Later, your JS will check if items exist in localStorage/db
+    // If no items -> show empty cart
+    // If items exist -> show cart-items + cart-summary and hide empty-cart
+  </script>  -->
+</body>
+</html>
