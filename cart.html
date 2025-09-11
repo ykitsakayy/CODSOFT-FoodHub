@@ -11,17 +11,22 @@
 
   <!-- Header -->
   <header id="main-header" class="header">
-    <h1 class="site-title">FoodieHub</h1>
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="logo.png" alt="FoodHub Logo" class="logo">
+      <h1 class="site-title">FoodHub</h1>
+    </div>
     <nav id="nav-bar" class="navbar">
       <ul class="nav-list">
-        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="home.html" class="nav-link active">Home</a></li>
         <li><a href="menu.html" class="nav-link">Menu</a></li>
         <li><a href="cart.html" class="nav-link">Cart</a></li>
         <li><a href="login.html" class="nav-link">Login</a></li>
         <li><a href="signup.html" class="nav-link">Signup</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
   <!-- Cart Section -->
   <main id="cart-section" class="container">
@@ -58,14 +63,14 @@
 
   <!-- Footer -->
   <footer id="main-footer" class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="logo.png" alt="FoodHub Logo" class="logo">
+      <span class="site-title">FoodHub</span>
+    </div>
     <p class="footer-text">&copy; 2025 FoodHub. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Placeholder JS Hook -->
-  <!-- <script>
-    // Later, your JS will check if items exist in localStorage/db
-    // If no items -> show empty cart
-    // If items exist -> show cart-items + cart-summary and hide empty-cart
-  </script>  -->
+  </div>
+</footer>
+  
 </body>
 </html>
