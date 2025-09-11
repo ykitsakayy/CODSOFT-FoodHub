@@ -109,7 +109,14 @@ body {
 
 .logo {
   height: 36px;
-  width: auto;
+  width: 36px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
 }
 
 .site-title {
@@ -460,6 +467,11 @@ body {
   align-items: center;
   gap: var(--spacing-xs);
   margin-bottom: var(--spacing-xs);
+}
+
+.footer-logo .logo {
+  height: 24px;
+  width: 24px;
 }
 
 .footer-text {
