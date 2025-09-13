@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - FoodHub</title>
@@ -11,25 +11,23 @@
 <body id="home-page">
 
   <!-- Header -->
-  
-<header id="main-header" class="header">
-  <div class="header-content">
-    <div class="logo-container">
-      <img src="logo.png" alt="FoodHub Logo" class="logo">
-      <h1 class="site-title">FoodHub</h1>
+  <header id="main-header" class="header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="logo.png" alt="FoodHub Logo" class="logo">
+        <h1 class="site-title">FoodHub</h1>
+      </div>
+      <nav id="nav-bar" class="navbar">
+        <ul class="nav-list">
+          <li><a href="home.html" class="nav-link active">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="cart.html" class="nav-link">Cart</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+          <li><a href="signup.html" class="nav-link">Signup</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav id="nav-bar" class="navbar">
-      <ul class="nav-list">
-        <li><a href="home.html" class="nav-link active">Home</a></li>
-        <li><a href="menu.html" class="nav-link">Menu</a></li>
-        <li><a href="cart.html" class="nav-link">Cart</a></li>
-        <li><a href="login.html" class="nav-link">Login</a></li>
-        <li><a href="signup.html" class="nav-link">Signup</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+  </header>
 
   <!-- Hero Section -->
   <section id="hero-section" class="hero">
@@ -70,16 +68,94 @@
     </div>
   </main>
 
-  <!-- Footer -->
- <footer id="main-footer" class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="logo.png" alt="FoodHub Logo" class="logo">
-      <span class="site-title">FoodHub</span>
+  <!-- Special Offers Section -->
+  <section id="offers-section" class="container">
+    <h2 class="section-title">Special Offers</h2>
+    <div class="menu-grid">
+
+      <div class="card dish-card" id="offer-1">
+        <div class="offer-badge">20% OFF</div>
+        <a href="product-details.html" class="dish-link">
+          <img src="images/pasta.jpg" alt="Pasta Special" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Creamy Alfredo Pasta</h3>
+          <p class="dish-description">Creamy pasta with our special sauce</p>
+          <p class="dish-price"><span class="original-price">$12.99</span> $10.39</p>
+          <a href="product-details.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card" id="offer-2">
+        <div class="offer-badge">COMBO DEAL</div>
+        <a href="product-details.html" class="dish-link">
+          <img src="images/combo.jpg" alt="Combo Meal" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Burger & Fries Combo</h3>
+          <p class="dish-description">Burger with fries and drink</p>
+          <p class="dish-price"><span class="original-price">$14.99</span> $11.99</p>
+          <a href="product-details.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
     </div>
-    <p class="footer-text">&copy; 2025 FoodHub. All Rights Reserved.</p>
-  </div>
-</footer>
+  </section>
+
+  <!-- Desserts Section -->
+  <section id="desserts-section" class="container">
+    <h2 class="section-title">Sweet Desserts</h2>
+    <div class="menu-grid">
+
+      <div class="card dish-card" id="dessert-1">
+        <a href="product-details.html" class="dish-link">
+          <img src="images/cheesecake.jpg" alt="Cheesecake" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">New York Cheesecake</h3>
+          <p class="dish-description">Creamy cheesecake with berry topping</p>
+          <p class="dish-price">$6.99</p>
+          <a href="product-details.html" class="btn btn-secondary">View Details</a>
+        </div>
+      </div>
+
+      <div class="card dish-card" id="dessert-2">
+        <a href="product-details.html" class="dish-link">
+          <img src="images/brownie.jpg" alt="Brownie" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Chocolate Brownie</h3>
+          <p class="dish-description">Warm chocolate brownie with ice cream</p>
+          <p class="dish-price">$5.99</p>
+          <a href="product-details.html" class="btn btn-secondary">View Details</a>
+        </div>
+      </div>
+
+      <div class="card dish-card" id="dessert-3">
+        <a href="product-details.html" class="dish-link">
+          <img src="images/tiramisu.jpg" alt="Tiramisu" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Tiramisu</h3>
+          <p class="dish-description">Classic Italian coffee-flavored dessert</p>
+          <p class="dish-price">$7.99</p>
+          <a href="product-details.html" class="btn btn-secondary">View Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo.png" alt="FoodHub Logo" class="logo">
+        <span class="site-title">FoodHub</span>
+      </div>
+      <p class="footer-text">&copy; 2025 FoodHub. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
