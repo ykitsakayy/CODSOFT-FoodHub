@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mango Mousse - FoodHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="script" href="script.js">
+</head>
+<body id="product-page">
+
+  <!-- Header -->
+  <header id="main-header" class="header">
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="logo.png" alt="FoodHub Logo" class="logo">
+      <h1 class="site-title">FoodHub</h1>
+    </div>
+    <nav id="nav-bar" class="navbar">
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link active">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="cart.html" class="nav-link">Cart</a></li>
+        <li><a href="login.html" class="nav-link">Login</a></li>
+        <li><a href="signup.html" class="nav-link">Signup</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Product Details Section -->
+  <main id="product-details-section" class="container">
+    <div class="product-details-grid">
+
+      <!-- Product Image -->
+      <div class="product-image">
+        <img src="Mango-Mousse.jpg" alt="Mango Mousse" class="dish-image-large">
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info card">
+        <h2 class="dish-name">Mango Mousse</h2>
+        <p class="dish-description">Light and airy mango mousse made with fresh Alphonso mango pulp, topped with mango chunks.</p>
+        <p class="dish-price" id="product-price">₹189.00</p>
+
+        <!-- Quantity Selector -->
+        <label for="product-qty" class="form-label">Quantity:</label>
+        <input type="number" id="product-qty" class="form-input" value="1" min="1">
+
+        <!-- Add to Cart Button -->
+        <button id="add-to-cart-btn" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+    </div>
+
+    <!-- Optional Reviews Section -->
+    <section id="product-reviews" class="reviews card">
+      <h3 class="section-title">Customer Reviews</h3>
+      <p class="text">“Delicious and cheesy bueger, fresh ingredients!” – Charlie C.</p>
+      <p class="text">“Perfect taste and cheese, loved it.” – Mark Z.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="logo.png" alt="FoodHub Logo" class="logo">
+      <span class="site-title">FoodHub</span>
+    </div>
+    <p class="footer-text">&copy; 2025 FoodHub. All Rights Reserved.</p>
+  </div>
+</footer>
+  
+</body>
+</html>
