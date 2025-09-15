@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,94 +8,205 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="script" href="script.js">
 </head>
+
 <body id="menu-page">
 
   <!-- Header -->
   <header id="main-header" class="header">
-  <div class="header-content">
-    <div class="logo-container">
-      <img src="logo.png" alt="FoodHub Logo" class="logo">
-      <h1 class="site-title">FoodHub</h1>
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="logo.png" alt="FoodHub Logo" class="logo">
+        <h1 class="site-title">FoodHub</h1>
+      </div>
+      <nav id="nav-bar" class="navbar">
+        <ul class="nav-list">
+          <li><a href="home.html" class="nav-link active">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="cart.html" class="nav-link">Cart</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+          <li><a href="signup.html" class="nav-link">Signup</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav id="nav-bar" class="navbar">
-      <ul class="nav-list">
-        <li><a href="home.html" class="nav-link active">Home</a></li>
-        <li><a href="menu.html" class="nav-link">Menu</a></li>
-        <li><a href="cart.html" class="nav-link">Cart</a></li>
-        <li><a href="login.html" class="nav-link">Login</a></li>
-        <li><a href="signup.html" class="nav-link">Signup</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
   <!-- Menu Section -->
   <main id="menu-section" class="container">
-    <h2 class="section-title">Our Special Dishes</h2>
+
+    <!-- Special Offers Category -->
+    <h2 class="section-title">Special Offers</h2>
     <div class="menu-grid">
 
-      <!-- Dish Card -->
-      <div class="card dish-card" id="dish-1">
-        <a href="product-details.html" class="dish-link">
-          <img src="images/pizza.jpg" alt="Pizza" class="dish-image">
+      <div class="card dish-card">
+        <a href="Family-Feast-Combo.html" class="dish-link">
+          <img src="Family-Feast-Combo.png" alt="Family Feast Combo" class="dish-image">
         </a>
         <div class="card-body">
-          <h3 class="dish-name">Margherita Pizza</h3>
-          <p class="dish-description">Classic cheese and tomato pizza with fresh basil.</p>
-          <p class="dish-price">Rs. --.--</p>
-          <button class="btn btn-primary">Add to Cart</button>
+          <h3 class="dish-name">Family Feast Combo (30% OFF)</h3>
+          <p class="dish-description">1 Large Margherita Pizza + 2 Cheese Burgers + 2 Soft Drinks + 1 Chocolate Brownie</p>
+          <p class="dish-price"><span class="original-price">₹1,497.00</span> ₹1,048.00</p>
+          <a href="Family-Feast-Combo.html" class="btn btn-primary">Order Now</a>
         </div>
       </div>
 
-      <div class="card dish-card" id="dish-2">
-        <a href="product-details.html" class="dish-link">
-          <img src="images/burger.jpg" alt="Burger" class="dish-image">
+      <div class="card dish-card">
+        <a href="Paneer-Tikka-Sizzler.html" class="dish-link">
+          <img src="Paneer-Tikka-Sizzler.jpeg" alt="Paneer Tikka Sizzler" class="dish-image">
         </a>
         <div class="card-body">
-          <h3 class="dish-name">Cheese Burger</h3>
-          <p class="dish-description">Juicy beef patty with melted cheese and crispy fries.</p>
-          <p class="dish-price">Rs. --.--</p>
-          <button class="btn btn-primary">Add to Cart</button>
+          <h3 class="dish-name">Paneer Tikka</h3>
+          <p class="dish-description">Marinated paneer cubes grilled with bell peppers & spices</p>
+          <p class="dish-price"><span class="original-price">₹349.00</span> ₹279.00</p>
+          <a href="Paneer-Tikka-Sizzler.html" class="btn btn-primary">Order Now</a>
         </div>
       </div>
 
-      <div class="card dish-card" id="dish-3">
-        <a href="product-details.html" class="dish-link">
-          <img src="images/pasta.jpg" alt="Pasta" class="dish-image">
+      <div class="card dish-card">
+        <a href="Truffle-Mushroom-Risotto.html" class="dish-link">
+          <img src="Truffle-Mushroom-Risotto.png" alt="Truffle Mushroom Risotto" class="dish-image">
         </a>
         <div class="card-body">
-          <h3 class="dish-name">Creamy Pasta</h3>
-          <p class="dish-description">Rich creamy Alfredo pasta with parmesan and herbs.</p>
-          <p class="dish-price">Rs. --.--</p>
-          <button class="btn btn-primary">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="card dish-card" id="dish-4">
-        <a href="product-details.html" class="dish-link">
-          <img src="images/salad.jpg" alt="Salad" class="dish-image">
-        </a>
-        <div class="card-body">
-          <h3 class="dish-name">Caesar Salad</h3>
-          <p class="dish-description">Crisp romaine lettuce, croutons, and Caesar dressing.</p>
-          <p class="dish-price">Rs. --.--</p>
-          <button class="btn btn-primary">Add to Cart</button>
+          <h3 class="dish-name">Truffle Mushroom Risotto</h3>
+          <p class="dish-description">Creamy Arborio rice cooked with truffle oil & mushrooms</p>
+          <p class="dish-price"><span class="original-price">₹899.00</span> ₹699.00</p>
+          <a href="Truffle-Mushroom-Risotto.html" class="btn btn-primary">Order Now</a>
         </div>
       </div>
 
     </div>
+
+    <!-- Main Courses Category -->
+    <h2 class="section-title">Main Courses</h2>
+    <div class="menu-grid">
+
+      <div class="card dish-card">
+        <a href="Margherita-Pizza.html" class="dish-link">
+          <img src="Margherita Pizza.jpg" alt="Margherita Pizza" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Margherita Pizza</h3>
+          <p class="dish-description">Classic cheese and tomato pizza with fresh basil</p>
+          <p class="dish-price">₹399.00</p>
+          <a href="Margherita-Pizza.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Cheese-Burger.html" class="dish-link">
+          <img src="Cheese-Burger.jpg" alt="Cheese Burger" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Cheese Burger</h3>
+          <p class="dish-description">Juicy beef patty with melted cheese and crispy fries</p>
+          <p class="dish-price">₹249.00</p>
+          <a href="Cheese-Burger.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Butter-Chicken.html" class="dish-link">
+          <img src="Butter-Chicken.jpg" alt="Butter Chicken" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Butter Chicken</h3>
+          <p class="dish-description">Tender chicken pieces in creamy tomato gravy</p>
+          <p class="dish-price">₹349.00</p>
+          <a href="Butter-Chicken.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Veg-Biryani.html" class="dish-link">
+          <img src="Veg-Biryani.jpeg" alt="Veg Biryani" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Veg Biryani</h3>
+          <p class="dish-description">Spiced basmati rice cooked with fresh vegetables</p>
+          <p class="dish-price">₹299.00</p>
+          <a href="Veg-Biryani.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Desserts Category -->
+    <h2 class="section-title">Sweet Desserts</h2>
+    <div class="menu-grid">
+
+      <div class="card dish-card">
+        <a href="New-York-Cheesecake.html" class="dish-link">
+          <img src="New-York-Cheesecake.jpeg" alt="New York Cheesecake" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">New York Cheesecake</h3>
+          <p class="dish-description">Rich creamy cheesecake with a biscuit base</p>
+          <p class="dish-price">₹179.00</p>
+          <a href="New-York-Cheesecake.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Chocolate-Brownie.html" class="dish-link">
+          <img src="Chocolate-Brownie-with-Ice-Cream.jpg" alt="Chocolate Brownie" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Chocolate Brownie</h3>
+          <p class="dish-description">Warm fudgy brownie served with vanilla ice cream</p>
+          <p class="dish-price">₹149.00</p>
+          <a href="Chocolate-Brownie.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Tiramisu.html" class="dish-link">
+          <img src="Tiramisu.webp" alt="Tiramisu" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Tiramisu</h3>
+          <p class="dish-description">Classic Italian dessert with layers of coffee-soaked sponge</p>
+          <p class="dish-price">₹199.00</p>
+          <a href="Tiramisu.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Gulab-Jamun.html" class="dish-link">
+          <img src="Gulab-Jamun.webp" alt="Gulab Jamun" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Gulab Jamun</h3>
+          <p class="dish-description">Soft, deep-fried milk balls soaked in rose syrup</p>
+          <p class="dish-price">₹49.00</p>
+          <a href="Gulab-Jamun.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+      <div class="card dish-card">
+        <a href="Mango-Mousse.html" class="dish-link">
+          <img src="Mango-Mousse.jpg" alt="Mango Mousse" class="dish-image">
+        </a>
+        <div class="card-body">
+          <h3 class="dish-name">Mango Mousse</h3>
+          <p class="dish-description">Light and airy mango mousse made from fresh mangoes</p>
+          <p class="dish-price">₹189.00</p>
+          <a href="Mango-Mousse.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+
+    </div>
+
   </main>
 
   <!-- Footer -->
   <footer id="main-footer" class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="logo.png" alt="FoodHub Logo" class="logo">
-      <span class="site-title">FoodHub</span>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo.png" alt="FoodHub Logo" class="logo">
+        <span class="site-title">FoodHub</span>
+      </div>
+      <p class="footer-text">&copy; 2025 FoodHub. All Rights Reserved.</p>
     </div>
-    <p class="footer-text">&copy; 2025 FoodHub. All Rights Reserved.</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
