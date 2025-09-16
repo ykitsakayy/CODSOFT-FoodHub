@@ -383,7 +383,9 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background-image: url('hero-section.png'); /* Put your image path here */
+  background-size: cover;
+  background-position: center;
   padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
   color: white;
