@@ -44,6 +44,7 @@
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* ===== BASE STYLES ===== */
@@ -122,7 +123,7 @@ body {
   font-weight: 700;
 }
 
-/* NAVIGATION BAR - NOW VISIBLE */
+/* NAVIGATION BAR - VISIBLE */
 .navbar {
   display: block;
 }
@@ -199,6 +200,7 @@ body {
   margin-bottom: var(--spacing-lg);
   color: var(--text-primary);
   font-weight: 600;
+  text-align: center;
 }
 
 .dish-name, .cart-item-name {
@@ -311,28 +313,7 @@ body {
 
 .dish-card {
   overflow: hidden;
-}
-
-/* Special offer badges */
-.offer-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: var(--accent-red);
-  color: white;
-  padding: 4px 8px;
-  border-radius: var(--border-radius-sm);
-  font-size: var(--font-size-xs);
-  font-weight: bold;
-  z-index: 1;
-}
-
-/* Original price strikethrough */
-.original-price {
-  text-decoration: line-through;
-  color: var(--text-secondary);
-  margin-right: var(--spacing-xs);
-  font-size: var(--font-size-sm);
+  position: relative;
 }
 
 /* ===== FORMS ===== */
@@ -383,9 +364,7 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background-image: url('hero-section.png'); /* Put your image path here */
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
   color: white;
@@ -507,6 +486,145 @@ body {
   font-size: var(--font-size-sm);
 }
 
+/* ===== OFFERS SECTION ===== */
+#offers-section .menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  justify-content: center;
+}
+
+#offers-section .dish-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#offer-1 {
+  flex: 2;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+#offer-2, #offer-3 {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--accent-red);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+.validity-text {
+  font-size: var(--font-size-xs);
+  color: var(--accent-red-light);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Special highlight for the rare offer */
+#offer-3 .offer-badge {
+  background: linear-gradient(45deg, var(--accent-red), var(--warning));
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ===== DESSERTS SECTION ===== */
+#desserts-section .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  gap: var(--spacing-lg);
+}
+
+#desserts-section .dish-card {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#desserts-section .dish-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+#desserts-section .dish-image {
+  height: 220px;
+  border-radius: var(--border-radius-lg);
+  transition: transform 0.5s ease;
+  object-fit: cover;
+  width: 100%;
+}
+
+#desserts-section .dish-image:hover {
+  transform: scale(1.1);
+}
+
+#desserts-section .dish-name {
+  color: var(--accent-red-light);
+  font-size: var(--font-size-lg);
+  margin-bottom: 8px;
+}
+
+#desserts-section .dish-price {
+  color: var(--accent-red);
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+}
+
+#desserts-section .btn {
+  margin-top: 12px;
+  background: linear-gradient(45deg, var(--accent-red), var(--accent-red-dark));
+  border: none;
+}
+
+#desserts-section .btn:hover {
+  background: linear-gradient(45deg, var(--accent-red-dark), var(--accent-red));
+  transform: translateY(-2px);
+}
+
+/* Sweet dessert special effects */
+.dessert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-red-light), var(--accent-red));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dessert-card:hover::before {
+  opacity: 1;
+}
+
 /* ===== UTILITY CLASSES ===== */
 .hidden {
   display: none !important;
@@ -584,6 +702,28 @@ body {
     flex-direction: column;
     gap: var(--spacing-md);
   }
+  
+  /* Offers section mobile adjustments */
+  #offers-section .menu-grid {
+    flex-direction: column;
+  }
+  
+  #offer-1, #offer-2, #offer-3 {
+    flex: 1;
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+  
+  /* Desserts section mobile adjustments */
+  #desserts-section .menu-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  #desserts-section .dish-image {
+    height: 200px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -593,6 +733,10 @@ body {
   
   .checkout-grid {
     grid-template-columns: 2fr 1fr;
+  }
+  
+  #desserts-section .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
