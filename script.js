@@ -24,13 +24,13 @@ function signup() {
 
     let users = getUsers();
     if (users.find(u => u.username === username)) {
-        alert('Username already taken');
+        alert('Username already taken 😱');
         return;
     }
 
     users.push({ username, password });
     saveUsers(users);
-    alert('Signup successful! Please log in now');
+    alert('Signup successful 🎉! Please log in now 💕');
 }
 
 // Login
@@ -48,7 +48,7 @@ function login() {
         alert(`Welcome back, ${username} 😍`);
         showUserPanel();
     } else {
-        alert('Invalid username or password');
+        alert('Invalid username or password 😓');
     }
 }
 
@@ -59,7 +59,7 @@ function logout() {
     document.getElementById('userPanel')?.style.setProperty('display', 'none');
     document.getElementById('signupForm')?.style.setProperty('display', 'block');
     document.getElementById('loginForm')?.style.setProperty('display', 'block');
-    alert('Logged out successfully');
+    alert('Logged out successfully 💕');
 }
 
 // Show user panel
