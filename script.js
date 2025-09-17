@@ -1,158 +1,141 @@
-// script.js
+// Keys for localStorage
+const usersKey = 'foodHubUsers';
+const loggedUserKey = 'loggedInUser';
+const cartKey = 'userCart';
 
-// ------------------------------
-// 1. SIGNUP / LOGIN HANDLER
-// ------------------------------
-const signupForm = document.getElementById("signup-form");
-if (signupForm) {
-  signupForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const name = document.getElementById("signup-name").value;
-    const email = document.getElementById("signup-email").value;
-    const password = document.getElementById("signup-password").value;
+// Example dishes
+const dishes = [
+    { name: "Butter Chicken", price: 10 },
+    { name: "Cheeseburger", price: 8 },
+    { name: "Chocolate Brownie", price: 5 },
+];
 
-    if (!name || !email || !password) {
-      alert("Please fill all fields!");
-      return;
+// Utility functions
+const getUsers = () => JSON.parse(localStorage.getItem(usersKey)) || [];
+const saveUsers = users => localStorage.setItem(usersKey, JSON.stringify(users));
+const getCart = () => JSON.parse(localStorage.getItem(cartKey)) || [];
+const saveCart = cart => localStorage.setItem(cartKey, JSON.stringify(cart));
+
+// Signup
+function signup() {
+    const username = document.getElementById('signupUsername')?.value;
+    const password = document.getElementById('signupPassword')?.value;
+    if (!username || !password) return;
+
+    let users = getUsers();
+    if (users.find(u => u.username === username)) {
+        alert('Username already taken 😱');
+        return;
     }
 
-    // Save user info to localStorage
-    localStorage.setItem("user", JSON.stringify({ name, email, password }));
-    alert("Signup successful!");
-    window.location.href = "confirmation.html";
-  });
+    users.push({ username, password });
+    saveUsers(users);
+    alert('Signup successful 🎉! Please log in now 💕');
 }
 
-const loginForm = document.getElementById("login-form");
-if (loginForm) {
-  loginForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const email = document.getElementById("login-email").value;
-    const password = document.getElementById("login-password").value;
+// Login
+function login() {
+    const username = document.getElementById('loginUsername')?.value;
+    const password = document.getElementById('loginPassword')?.value;
+    if (!username || !password) return;
 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-      alert("Login successful!");
-      window.location.href = "home.html";
+    const users = getUsers();
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
+        localStorage.setItem(loggedUserKey, username);
+        localStorage.setItem(cartKey, JSON.stringify([]));
+        alert(`Welcome back, ${username} 😍`);
+        showUserPanel();
     } else {
-      alert("Invalid credentials!");
+        alert('Invalid username or password 😓');
     }
-  });
 }
 
-// ------------------------------
-// 2. CART HANDLER
-// ------------------------------
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Add to Cart (from product-details or menu)
-const addToCartBtn = document.getElementById("add-to-cart-btn");
-if (addToCartBtn) {
-  addToCartBtn.addEventListener("click", () => {
-    const productName = document.querySelector(".dish-name").textContent;
-    const productPrice = parseFloat(document.getElementById("product-price").textContent.replace('$',''));
-    const quantity = parseInt(document.getElementById("product-qty").value);
-
-    // Check if item exists
-    const existingItem = cart.find(item => item.name === productName);
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      cart.push({ name: productName, price: productPrice, quantity });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${productName} added to cart!`);
-  });
+// Logout
+function logout() {
+    localStorage.removeItem(loggedUserKey);
+    localStorage.removeItem(cartKey);
+    document.getElementById('userPanel')?.style.setProperty('display', 'none');
+    document.getElementById('signupForm')?.style.setProperty('display', 'block');
+    document.getElementById('loginForm')?.style.setProperty('display', 'block');
+    alert('Logged out successfully 💕');
 }
 
-// Display Cart Items (cart.html)
-function displayCart() {
-  const cartItemsContainer = document.getElementById("cart-items");
-  const emptyCartDiv = document.getElementById("empty-cart");
-  const cartSummary = document.getElementById("cart-summary");
-  if (!cartItemsContainer || !emptyCartDiv || !cartSummary) return;
+// Show user panel
+function showUserPanel() {
+    const currentUser = localStorage.getItem(loggedUserKey);
+    if (!currentUser) return;
 
-  cartItemsContainer.innerHTML = "";
-  let total = 0;
+    document.getElementById('signupForm')?.style.setProperty('display', 'none');
+    document.getElementById('loginForm')?.style.setProperty('display', 'none');
+    document.getElementById('userPanel')?.style.setProperty('display', 'block');
 
-  if (cart.length === 0) {
-    emptyCartDiv.style.display = "block";
-    cartItemsContainer.style.display = "none";
-    cartSummary.style.display = "none";
-    return;
-  }
+    if (document.getElementById('currentUser'))
+        document.getElementById('currentUser').textContent = currentUser;
 
-  emptyCartDiv.style.display = "none";
-  cartItemsContainer.style.display = "block";
-  cartSummary.style.display = "block";
+    updateCartDisplay();
+}
 
-  cart.forEach((item, index) => {
-    total += item.price * item.quantity;
+// Cart
+function addToCart(dishName) {
+    const dish = dishes.find(d => d.name === dishName);
+    if (dish) {
+        const cart = getCart();
+        cart.push(dish);
+        saveCart(cart);
+        alert(`${dishName} added to cart 🛒`);
+        updateCartDisplay();
+    }
+}
 
-    const div = document.createElement("div");
-    div.classList.add("cart-item", "card");
-    div.innerHTML = `
-      <h3 class="cart-item-name">${item.name}</h3>
-      <p class="cart-item-price">$${item.price.toFixed(2)}</p>
-      <label for="qty-${index}">Quantity:</label>
-      <input type="number" id="qty-${index}" class="cart-qty" value="${item.quantity}" min="1">
-      <button class="btn btn-danger" id="remove-${index}">Remove</button>
-    `;
-    cartItemsContainer.appendChild(div);
+function updateCartDisplay() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalPriceElem = document.getElementById('totalPrice');
+    if (!cartItemsContainer || !totalPriceElem) return;
 
-    // Quantity change
-    div.querySelector(`#qty-${index}`).addEventListener("change", function() {
-      const newQty = parseInt(this.value);
-      cart[index].quantity = newQty;
-      localStorage.setItem("cart", JSON.stringify(cart));
-      displayCart();
+    const cart = getCart();
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price} `;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = "Remove ❌";
+        removeBtn.onclick = () => {
+            cart.splice(index, 1);
+            saveCart(cart);
+            updateCartDisplay();
+        };
+
+        li.appendChild(removeBtn);
+        cartItemsContainer.appendChild(li);
     });
 
-    // Remove button
-    div.querySelector(`#remove-${index}`).addEventListener("click", function() {
-      cart.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      displayCart();
-    });
-  });
-
-  document.getElementById("cart-total-price").textContent = `$${total.toFixed(2)}`;
+    totalPriceElem.textContent = total.toFixed(2);
 }
-displayCart();
 
-// ------------------------------
-// 3. Checkout Page
-// ------------------------------
-function displayCheckout() {
-  const checkoutItems = document.getElementById("checkout-items");
-  const checkoutTotal = document.getElementById("checkout-total-price");
-  const placeOrderBtn = document.getElementById("place-order-btn");
-  if (!checkoutItems || !checkoutTotal || !placeOrderBtn) return;
-
-  let total = 0;
-  checkoutItems.innerHTML = "";
-
-  if (cart.length === 0) {
-    checkoutItems.innerHTML = "<p>No items in your cart.</p>";
-    checkoutTotal.textContent = "$0.00";
-    placeOrderBtn.disabled = true;
-    return;
-  }
-
-  cart.forEach(item => {
-    const p = document.createElement("p");
-    p.textContent = `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
-    checkoutItems.appendChild(p);
-    total += item.price * item.quantity;
-  });
-
-  checkoutTotal.textContent = `$${total.toFixed(2)}`;
-
-  placeOrderBtn.addEventListener("click", () => {
-    alert("Order placed successfully!");
-    localStorage.removeItem("cart");
-    window.location.href = "confirmation.html";
-  });
+function toggleCart() {
+    const container = document.getElementById('cartContainer');
+    if (container) {
+        container.style.display = container.style.display === 'none' ? 'block' : 'none';
+    }
 }
-displayCheckout();
+
+function clearCart() {
+    saveCart([]);
+    updateCartDisplay();
+}
+
+// Init on page load
+window.onload = () => {
+    if (localStorage.getItem(loggedUserKey)) {
+        showUserPanel();
+    }
+
+    document.getElementById('viewCart')?.addEventListener('click', toggleCart);
+    document.getElementById('clearCart')?.addEventListener('click', clearCart);
+};
