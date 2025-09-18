@@ -199,6 +199,7 @@ body {
   margin-bottom: var(--spacing-lg);
   color: var(--text-primary);
   font-weight: 600;
+  text-align: center;
 }
 
 .dish-name, .cart-item-name {
@@ -302,6 +303,8 @@ body {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -311,6 +314,9 @@ body {
 
 .dish-card {
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Special offer badges */
@@ -383,14 +389,15 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background-image: url('hero-section.png'); 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-section.png'); 
   background-size: cover;
   background-position: center;
   padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
   color: white;
   border-radius: var(--border-radius-md);
-  margin-bottom: var(--spacing-lg);
+  margin: var(--spacing-lg) auto;
+  max-width: 1200px;
 }
 
 .hero-title {
@@ -424,6 +431,40 @@ body {
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
+}
+
+/* ===== SPECIAL OFFERS LAYOUT ===== */
+#offers-section .menu-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--spacing-lg);
+}
+
+#offers-section #offer-1 {
+  grid-row: 1 / span 2;
+}
+
+#offers-section .dish-image {
+  height: 240px;
+  object-fit: cover;
+}
+
+/* ===== DESSERTS LAYOUT ===== */
+#desserts-section .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: var(--spacing-lg);
+}
+
+#desserts-section #dessert-3 {
+  grid-column: 1 / -1;
+}
+
+#desserts-section .dish-image {
+  height: 200px;
+  object-fit: cover;
 }
 
 /* ===== CART STYLES ===== */
@@ -473,6 +514,17 @@ body {
 .dish-link {
   display: block;
   overflow: hidden;
+}
+
+.card-body {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .btn {
+  margin-top: auto;
 }
 
 /* ===== FOOTER ===== */
@@ -537,6 +589,26 @@ body {
   /* Grid adjustments for mobile */
   .menu-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Special Offers Layout for Mobile */
+  #offers-section .menu-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  #offers-section #offer-1 {
+    grid-row: auto;
+  }
+  
+  /* Desserts Layout for Mobile */
+  #desserts-section .menu-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  #desserts-section #dessert-3 {
+    grid-column: auto;
   }
   
   /* Button adjustments for mobile */
