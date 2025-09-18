@@ -60,12 +60,6 @@ body {
   font-size: var(--font-size-md);
 }
 
-#page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .container {
   width: 100%;
   max-width: 1200px;
@@ -80,7 +74,7 @@ body {
 /* ===== HEADER & NAVIGATION ===== */
 .header {
   background-color: var(--bg-secondary);
-  padding: var(--spacing-md);
+  padding: var(--spacing-md) 0;
   box-shadow: var(--shadow-sm);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
@@ -95,7 +89,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
+  padding: 0 var(--spacing-md);
 }
 
 .logo-container {
@@ -123,7 +117,7 @@ body {
   font-weight: 700;
 }
 
-/* NAVIGATION BAR - VISIBLE ON DESKTOP */
+/* NAVIGATION BAR */
 .navbar {
   display: block;
 }
@@ -132,8 +126,373 @@ body {
   display: flex;
   list-style: none;
   gap: var(--spacing-lg);
-  flex-wrap: wrap;
 }
 
 .nav-link {
-  color:
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: var(--spacing-xs) 0;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-red);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-red);
+}
+
+/* Mobile menu button - hidden by default */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+}
+
+/* ===== MAIN CONTENT ===== */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-red);
+  border: 2px solid var(--accent-red);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-red);
+  color: white;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Special offer badges */
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--accent-red);
+  color: white;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* Original price strikethrough */
+.original-price {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  margin-right: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-section.png'); 
+  background-size: cover;
+  background-position: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  color: white;
+  border-radius: var(--border-radius-md);
+  margin: var(--spacing-lg) auto;
+  max-width: 1200px;
+}
+
+.hero-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xl);
+  color: #f0f0f0;
+}
+
+/* ===== GRID LAYOUTS ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+/* ===== SPECIAL OFFERS LAYOUT ===== */
+#offers-section .menu-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--spacing-lg);
+  align-items: stretch;
+}
+
+#offers-section #offer-1 {
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+#offers-section #offer-1 .dish-image {
+  flex: 1;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+#offers-section .dish-image {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ===== DESSERTS LAYOUT ===== */
+#desserts-section .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: var(--spacing-lg);
+}
+
+#desserts-section #dessert-3 {
+  grid-column: 1 / -1;
+}
+
+#desserts-section .dish-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===== IMAGES ===== */
+.dish-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+  transition: transform 0.3s ease;
+}
+
+.dish-image:hover {
+  transform: scale(1.05);
+}
+
+.dish-link {
+  display: block;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .btn {
+  margin-top: auto;
+}
+
+.dish-name {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.dish-price {
+  font-size: var(--font-size-md);
+  color: var(--accent-red);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dish-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-logo .logo {
+  height: 30px;
+  width: 30px;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  /* Header adjustments for mobile */
+  .header-content {
+    flex-wrap: wrap;
+  }
+  
+  .menu-toggle {
+    display: block;
+    order: 2;
+  }
+  
+  .navbar {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: var(--spacing-md);
+  }
+  
+  .navbar.mobile-visible {
+    display: block;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  /* Grid adjustments for mobile */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Special Offers Layout for Mobile */
+  #offers-section .menu-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  #offers-section #offer-1 {
+    grid-row: auto;
+  }
+  
+  #offers-section #offer-1 .dish-image {
+    min-height: 200px;
+  }
+  
+  /* Desserts Layout for Mobile */
+  #desserts-section .menu-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  #desserts-section #dessert-3 {
+    grid-column: auto;
+  }
+  
+  /* Button adjustments for mobile */
+  .btn {
+    width: 100%;
+    margin: var(--spacing-xs) 0;
+  }
+}
+
+/* Animation for better UX */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card, .btn {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Focus states for accessibility */
+button:focus, 
+a:focus, 
+input:focus, 
+select:focus {
+  outline: 2px solid var(--accent-red-light);
+  outline-offset: 2px;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
