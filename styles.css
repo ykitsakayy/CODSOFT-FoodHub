@@ -282,9 +282,9 @@ body {
   padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
   color: white;
-  border-radius: var(--border-radius-md);
-  margin: var(--spacing-lg) auto;
-  max-width: 1200px;
+  border-radius: 0; /* optional: remove rounded corners for full-width */
+  margin: 0; /* remove auto margins */
+  width: 100%; /* full width */
 }
 
 .hero-title {
