@@ -291,7 +291,7 @@ body { margin: 0; }
   background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('hero-section.png');
   background-size: cover;
   background-position: center;
-  border-radius: 0; /* optional */
+  align-items: center;
 }
 
 
