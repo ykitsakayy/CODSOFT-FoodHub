@@ -300,12 +300,14 @@ body { margin: 0; }
   font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-md);
   color: white;
+  text-align: center;
 }
 
 .hero-subtitle {
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-xl);
   color: #f0f0f0;
+  text-align: center;
 }
 
 /* ===== GRID LAYOUTS ===== */
