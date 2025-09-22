@@ -19,28 +19,28 @@ FoodHub is a **comprehensive UI/UX design prototype** that integrates four key c
 
 ## Designed Pages and their properties
 ### 1. 🔐 Authentication Flow UI
-- **Index** (Welcome page) [Welcome]([https://ykitsakayy.github.io/CODSOFT-FoodHub/])
-- Modern **Login/Signup Pages** [Log in]([https://ykitsakayy.github.io/CODSOFT-FoodHub/login.html]) [Sign in]([https://ykitsakayy.github.io/CODSOFT-FoodHub/signup.html])
-- **Confirmation page** after the successful login/signup [Login/Signup Successful]([https://ykitsakayy.github.io/CODSOFT-FoodHub/confirmation.html])
+- **Index** (Welcome page) [Welcome](https://ykitsakayy.github.io/CODSOFT-FoodHub/)
+- Modern **Login/Signup Pages** [Log in](https://ykitsakayy.github.io/CODSOFT-FoodHub/login.html) [Sign in](https://ykitsakayy.github.io/CODSOFT-FoodHub/signup.html)
+- **Confirmation page** after the successful login/signup [Login/Signup Successful](https://ykitsakayy.github.io/CODSOFT-FoodHub/confirmation.html)
 - **Social Login Options** for convenience 
 
 ### 2. 📧 Email Template Designs 
-- Promotional Templates (marketing-focused) [Promotional page]([https://ykitsakayy.github.io/CODSOFT-FoodHub/promo-email.html])
+- Promotional Templates (marketing-focused) [Promotional page](https://ykitsakayy.github.io/CODSOFT-FoodHub/promo-email.html)
 - Responsive Layouts (mobile-friendly)
-- **Unsubscribe** flow [Unsubscribe us]([https://ykitsakayy.github.io/CODSOFT-FoodHub/unsubscribe.html])
+- **Unsubscribe** flow [Unsubscribe us](https://ykitsakayy.github.io/CODSOFT-FoodHub/unsubscribe.html)
 
 ### 3. 🍽️ Restaurant Menu Interface 
-- **Product Cards** with appetizing visuals [Menu]([https://ykitsakayy.github.io/CODSOFT-FoodHub/menu.html])
+- **Product Cards** with appetizing visuals [Menu](https://ykitsakayy.github.io/CODSOFT-FoodHub/menu.html)
 - Unique **Products Pages** for every product 
 - Different **Category** sections
 - Stylish **Badges** for the products of offers section
 
 ### 4. 🛒 E-Commerce Website Design
-- **Homepage Layout** with engaging hero + featured dishes [Home Page]([https://ykitsakayy.github.io/CODSOFT-FoodHub/home.html])
-- **Menu** to showcase all products on one place [Menu]([https://ykitsakayy.github.io/CODSOFT-FoodHub/menu.html])
+- **Homepage Layout** with engaging hero + featured dishes [Home Page](https://ykitsakayy.github.io/CODSOFT-FoodHub/home.html)
+- **Menu** to showcase all products on one place [Menu](https://ykitsakayy.github.io/CODSOFT-FoodHub/menu.html)
 - **Product Pages** of each and every product 
-- **Shopping Cart** for smooth cart management  [Cart]([https://ykitsakayy.github.io/CODSOFT-FoodHub/cart.html])
-- **Checkout Flow** (multi-step, streamlined)  [Checkout]([https://ykitsakayy.github.io/CODSOFT-FoodHub/checkout.html])
+- **Shopping Cart** for smooth cart management  [Cart](https://ykitsakayy.github.io/CODSOFT-FoodHub/cart.html)
+- **Checkout Flow** (multi-step, streamlined)  [Checkout](https://ykitsakayy.github.io/CODSOFT-FoodHub/checkout.html)
 
 ---
 
